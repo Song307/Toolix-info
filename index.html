@@ -31,12 +31,23 @@
             font-weight: 700;
             font-size: 1.5rem; /* 2xl */
             color: #374151;
-            margin-bottom: 1.5rem;
-            border-left: 5px solid #4f46e5;
+            border-left: 5px solid #1f2937; /* Changed to dark gray/black */
             padding-left: 1rem;
         }
         .card {
             @apply bg-white p-8 rounded-3xl shadow-xl border border-gray-100 transition duration-300 hover:shadow-2xl;
+        }
+        .cta-button {
+            /* Custom button style for primary call to action */
+            /* Changed from primary-indigo to gray-900 */
+            @apply bg-gray-900 text-white font-bold py-4 px-8 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-gray-700 hover:shadow-xl transform hover:-translate-y-0.5 inline-flex items-center text-xl sm:text-2xl w-full justify-center sm:w-auto;
+        }
+        /* Project Detail specific styles */
+        .project-detail-icon {
+            @apply text-gray-700 text-2xl mr-2; /* Changed to dark gray */
+        }
+        .project-sub-title {
+            @apply font-extrabold text-xl text-gray-800 mb-3 border-b border-gray-200 pb-2; /* Changed border color */
         }
     </style>
     <script>
@@ -44,8 +55,9 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary-indigo': '#4f46e5', // Indigo 600 (Main accent)
-                        'secondary-gray': '#4b5563', // Gray 600 (Subtle headings/text)
+                        // primary-indigo 대신 gray-900 계열을 사용
+                        'primary-dark': '#1f2937', // Near black for strong contrast
+                        'secondary-gray': '#4b5563',
                     },
                     borderRadius: {
                         '3xl': '2rem', /* More rounded corners */
@@ -57,17 +69,17 @@
 </head>
 <body class="text-gray-800 antialiased">
 
-    <!-- Header / Hero Introduction -->
-    <header class="bg-primary-indigo text-white py-16 mb-12 shadow-2xl">
+    <!-- Header / Hero Introduction (Dark Monochrome) -->
+    <header class="bg-gray-900 text-white py-16 mb-12 shadow-2xl">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-6xl font-extrabold mb-2">송하성</h1>
-            <p class="text-3xl font-light opacity-90">Full-stack Developer (Hah-sung Song)</p>
+            <h1 class="text-6xl font-extrabold mb-2">TOOLIX</h1>
+            <p class="text-3xl font-light opacity-80">AI Markdown Editer</p>
             
             <div class="mt-8 space-x-6 text-xl">
-                <a href="mailto:ssongsyj0203@gmail.com" class="inline-flex items-center text-white hover:text-indigo-200 transition">
+                <a href="mailto:ssongsyj0203@gmail.com" class="inline-flex items-center text-white hover:text-gray-300 transition">
                     <i class="fas fa-envelope mr-2"></i> ssongsyj0203@gmail.com
                 </a>
-                <a href="https://github.com/Song307" target="_blank" class="inline-flex items-center text-white hover:text-indigo-200 transition">
+                <a href="https://github.com/Song307" target="_blank" class="inline-flex items-center text-white hover:text-gray-300 transition">
                     <i class="fab fa-github mr-2"></i> GitHub
                 </a>
             </div>
@@ -83,18 +95,33 @@
             </div>
             
             <div class="card max-w-4xl mx-auto p-10">
-                <!-- Profile Image -->
-                <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-xl border-4 border-primary-indigo/40">
-                    <img src="https://avatars.githubusercontent.com/u/171139330?v=4" alt="프로필 이미지" class="w-full h-full object-cover">
+                <!-- Compact Personal Info -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 p-6 bg-white rounded-2xl shadow-md border border-gray-100">
+                    <div class="w-24 h-24 flex-shrink-0 rounded-full overflow-hidden border-2 border-gray-400/30">
+                        <img src="https://avatars.githubusercontent.com/u/171139330?v=4" alt="프로필 이미지" class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-center sm:text-left">
+                        <h2 class="text-xl font-bold text-gray-800">Hah-sung Song</h2>
+                        <p class="text-gray-800 font-medium mb-2">Full-stack Developer</p> <!-- Changed from primary-indigo -->
+                        <div class="flex justify-center sm:justify-start space-x-3">
+                            <a href="mailto:ssongsyj0203@gmail.com" class="text-gray-500 hover:text-gray-800 transition-colors" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://github.com/Song307" target="_blank" class="text-gray-500 hover:text-gray-900 transition-colors" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 
                 <h3 class="text-center text-2xl font-bold mb-6 text-gray-900">개발 철학 및 강점</h3>
+                
                 <div class="space-y-6 text-gray-700 leading-relaxed text-base">
                     <p>
-                        저는 비즈니스 문제를 기술로 해결하는 과정에 매력을 느끼는 개발자입니다. 사용자에게 <strong>실질적인 가치를 제공</strong>하는 서비스를 만드는 것을 목표로 하며, 특히 React와 TypeScript를 활용하여 확장성과 유지보수성이 높은 클라이언트 솔루션을 구축하는 데 강점을 가지고 있습니다. 새로운 기술 도입에 주저하지 않으며, 팀원들과의 투명한 소통과 코드 리뷰를 통해 더 나은 결과물을 도출하는 협업 문화를 중요하게 생각합니다.
+                        저는 <strong>'기술을 통해 사용자의 문제를 해결하는 일'</strong>에 열정을 가진 풀스택 개발자입니다. 특히 React와 TypeScript 기반으로 <strong>확장 가능하고 견고한 클라이언트 아키텍처</strong>를 구축하는 데 강점을 가지고 있습니다. 새로운 기술을 탐구하고, 투명한 소통과 코드 리뷰를 통해 동료들과 함께 더 높은 품질의 결과물을 만들어내는 협업 문화를 중요하게 생각합니다.
                     </p>
                     <p>
-                        이번 '툴릭스(Toolix)' 프로젝트를 통해 클라이언트 사이드 아키텍처 설계, TipTap 리치 에디터 통합 및 플러그인 확장, 그리고 IndexedDB를 활용한 오프라인 친화적 로컬 저장소 구축 역량을 특히 보여주고자 합니다. 단순 기능 구현을 넘어, <strong>사용자 경험(UX) 최적화와 안정적인 데이터 관리</strong>에 집중하여 프로젝트를 완성했습니다.
+                        '툴릭스(Toolix)' 프로젝트에서는 클라이언트 사이드 아키텍처 설계, TipTap 에디터 통합 및 확장, 그리고 <strong>IndexedDB 기반의 오프라인 친화적 로컬 저장소</strong> 구축 역량을 보여주고자 했습니다. 단순한 기능 구현을 넘어, <strong>사용자 경험(UX) 최적화와 안정적인 데이터 관리</strong>에 집중하여 개발자로서의 깊이 있는 이해와 실행 능력을 입증했습니다.
                     </p>
                 </div>
             </div>
@@ -110,7 +137,7 @@
                 <div class="space-y-8">
                     <!-- Frontend -->
                     <div>
-                        <h4 class="text-xl font-bold text-primary-indigo mb-4"><i class="fas fa-desktop mr-2"></i> 프론트엔드</h4>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4"><i class="fas fa-desktop mr-2"></i> 프론트엔드</h4>
                         <div class="flex flex-wrap gap-3">
                             <span class="skill-tag">JavaScript, TypeScript</span>
                             <span class="skill-tag-primary">React 19, React Router, React DOM</span>
@@ -122,7 +149,7 @@
 
                     <!-- Backend & Data -->
                     <div>
-                        <h4 class="text-xl font-bold text-primary-indigo mb-4"><i class="fas fa-server mr-2"></i> 백엔드 & 데이터</h4>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4"><i class="fas fa-server mr-2"></i> 백엔드 & 데이터</h4>
                         <div class="flex flex-wrap gap-3">
                             <span class="skill-tag">Node.js (Express)</span>
                             <span class="skill-tag-data">IndexedDB (로컬 저장소)</span>
@@ -132,7 +159,7 @@
 
                     <!-- DevOps & Tools -->
                     <div>
-                        <h4 class="text-xl font-bold text-primary-indigo mb-4"><i class="fas fa-cogs mr-2"></i> DevOps & Tools</h4>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4"><i class="fas fa-cogs mr-2"></i> DevOps & Tools</h4>
                         <div class="flex flex-wrap gap-3">
                             <span class="skill-tag">Git, TypeScript, ESLint, Jest, RTL</span>
                             <span class="skill-tag-ai">@google/generative-ai (AI 연동)</span>
@@ -148,148 +175,417 @@
                     @apply inline-flex items-center px-4 py-1.5 text-sm font-medium bg-gray-100 text-gray-700 rounded-full border border-gray-200 transition duration-150 ease-in-out hover:bg-gray-200;
                 }
                 .skill-tag-primary {
-                    /* Primary Indigo Tag */
-                    @apply inline-flex items-center px-4 py-1.5 text-sm font-bold bg-primary-indigo text-white rounded-full border border-primary-indigo transition duration-150 ease-in-out hover:bg-indigo-700;
+                    /* Primary Tag: Black/Dark Gray */
+                    @apply inline-flex items-center px-4 py-1.5 text-sm font-bold bg-gray-800 text-white rounded-full border border-gray-900 transition duration-150 ease-in-out hover:bg-gray-700;
                 }
                 .skill-tag-ai {
-                    /* AI Specific Tag */
-                    @apply inline-flex items-center px-4 py-1.5 text-sm font-medium bg-emerald-100 text-emerald-800 rounded-full border border-emerald-300 transition duration-150 ease-in-out hover:bg-emerald-200;
+                    /* AI Specific Tag: Subtle Light Green/Gray */
+                    @apply inline-flex items-center px-4 py-1.5 text-sm font-medium bg-gray-200 text-gray-800 rounded-full border border-gray-300 transition duration-150 ease-in-out hover:bg-gray-300;
                 }
                 .skill-tag-data {
-                    /* Data Specific Tag */
-                    @apply inline-flex items-center px-4 py-1.5 text-sm font-medium bg-amber-100 text-amber-800 rounded-full border border-amber-300 hover:bg-amber-200;
+                    /* Data Specific Tag: Medium Gray */
+                    @apply inline-flex items-center px-4 py-1.5 text-sm font-medium bg-gray-300 text-gray-800 rounded-full border border-gray-400 hover:bg-gray-400;
                 }
                 .skill-tag-util {
-                    /* Utility Tag */
-                    @apply inline-flex items-center px-4 py-1.5 text-sm font-medium bg-blue-100 text-blue-800 rounded-full border border-blue-300 hover:bg-blue-200;
+                    /* Utility Tag: Light Gray */
+                    @apply inline-flex items-center px-4 py-1.5 text-sm font-medium bg-gray-100 text-gray-700 rounded-full border border-gray-200 hover:bg-gray-200;
                 }
             </style>
         </section>
 
         <!-- Project Details Section -->
         <section id="project" class="mb-24">
-            <div class="text-center mb-10">
-                <h2 class="section-heading">프로젝트 상세: 툴릭스 (AI Web Editer)</h2>
+            <div class="text-center mb-16">
+                <h2 class="section-heading">Featured Project</h2>
             </div>
 
-            <!-- Project Hero Card -->
-            <div class="card bg-primary-indigo/5 p-10 mb-10 border-primary-indigo/20">
-                <h3 class="text-3xl font-extrabold text-primary-indigo text-center mb-4">툴릭스 (Toolix)</h3>
-                <p class="text-center text-gray-700 max-w-3xl mx-auto">
-                    클라이언트 사이드 중심의 통합 에디터 + AI 보조 분석(리서치, 문서 분석, 페르소나 피드백) 기능을 제공하는 <strong>로컬 기반 워크스페이스 솔루션</strong>입니다.
-                </p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-10">
-                <!-- Architecture & Features (Left Column) -->
-                <div class="space-y-10">
-                    <!-- Problem Definition & Architecture -->
-                    <div class="card">
-                        <h3 class="sub-heading">문제 정의 및 아키텍처</h3>
-                        
-                        <div class="mb-6">
-                            <h4 class="font-semibold text-secondary-gray mb-2 text-lg">문제 정의</h4>
-                            <ul class="list-disc ml-5 text-gray-600 space-y-2 text-base">
-                                <li>다양한 포맷(문서, 이미지, PDF, 영상)을 통합 편집하고 AI 분석 기능을 결합한 <strong>로컬 기반 워크스페이스</strong>의 부재.</li>
-                                <li>민감한 문서를 위한 <strong>클라우드 의존도가 낮고 오프라인 친화적인</strong> 편집 환경 필요성.</li>
-                            </ul>
+            <!-- Project Hero - Clean Minimal Design -->
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden mb-12 border border-gray-100">
+                <div class="grid lg:grid-cols-2">
+                    <!-- Left: Project Info -->
+                    <div class="p-12 flex flex-col justify-center">
+                        <div class="inline-flex items-center px-4 py-2 bg-gray-100 rounded-full text-sm font-semibold text-gray-700 mb-6 w-fit">
+                            <i class="fas fa-circle text-green-500 text-xs mr-2 animate-pulse"></i>
+                            Available Now
                         </div>
-
-                        <div>
-                            <h4 class="font-semibold text-secondary-gray mb-2 text-lg">아키텍처/설계</h4>
-                            <ul class="list-disc ml-5 text-gray-600 space-y-2 text-base">
-                                <li><strong>핵심</strong>: SPA (React + TypeScript) 기반의 클라이언트 중심 아키텍처.</li>
-                                <li><strong>에디터</strong>: TipTap(리치 에디터)을 활용하여 확장성과 플러그인화 확보.</li>
-                                <li><strong>로컬 스토리지</strong>: IndexedDB를 통한 문서 및 메타데이터 장기 저장.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Core Features -->
-                    <div class="card">
-                        <h3 class="sub-heading">핵심 기능 구현</h3>
-                        
-                        <div class="mb-6 border-b pb-6 border-gray-100">
-                            <h4 class="font-semibold text-secondary-gray mb-2 text-lg"><i class="fas fa-brain mr-2 text-primary-indigo/80"></i> 1. AI 리서치 & 텍스트 분석</h4>
-                            <p class="text-gray-600 mb-2 text-base">선택된 텍스트나 전체 문서에 대해 AI 기반 요약, 문법/스타일 피드백, 논리 구조 분석 등을 제공합니다.</p>
-                            <div class="bg-indigo-50 p-3 rounded-xl border border-indigo-200 text-sm text-indigo-800">
-                                구현 방식: 클라이언트(ai.ts)에서 AI API 호출, 결과는 UI로 렌더링 후 에디터에 삽입/주석 형태로 반영.
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-semibold text-secondary-gray mb-2 text-lg"><i class="fas fa-file-alt mr-2 text-primary-indigo/80"></i> 2. 통합 파일 관리 및 미리보기</h4>
-                            <p class="text-gray-600 mb-2 text-base">문서, 이미지, PDF, 동영상을 하나의 워크스페이스에서 관리 및 미리보기/편집합니다.</p>
-                            <ul class="list-disc ml-5 text-gray-600 space-y-1 mt-2 text-sm">
-                                <li><strong>PDF</strong>: `react-pdf` + `pdfjs-dist`로 뷰어 기능(축소/회전/썸네일) 제공.</li>
-                                <li><strong>이미지</strong>: `fabric` 라이브러리로 캔버스 기반 간단 편집(자르기/필터) 지원.</li>
-                                <li><strong>동영상</strong>: `video.js`를 통해 재생 및 간단 제어 기능 제공.</li>
-                            </ul>
-                        </div>
-                        <!-- Placeholder for the main screenshot -->
-                        <img src="https://placehold.co/600x200/4f46e5/ffffff?text=Toolix+AI+Web+Editer+Screenshot" alt="툴릭스 메인 에디터 화면 모의" class="mt-6 rounded-xl shadow-md border border-gray-200">
-                    </div>
-                </div>
-                
-                <!-- Role, Results & Retrospection (Right Column) -->
-                <div class="space-y-10">
-                    <!-- Role & Results -->
-                    <div class="card">
-                        <h3 class="sub-heading">역할 및 성과</h3>
-                        <div class="space-y-6">
-                            <div>
-                                <h4 class="font-bold text-lg text-gray-900 mb-2"><i class="fas fa-user-tie mr-2 text-primary-indigo"></i> 나의 역할 및 기여</h4>
-                                <ul class="list-disc ml-5 text-gray-600 space-y-1 text-sm">
-                                    <li>프로젝트 아키텍처 설계 및 스택 선정.</li>
-                                    <li>TipTap 기반 리치 에디터 통합 및 확장.</li>
-                                    <li>IndexedDB 기반 로컬 저장소 설계 및 구현.</li>
-                                    <li>AI 연동 유틸 및 에디터-API 통신 레이어 구현.</li>
-                                    <li>워크스페이스 <strong>UX(드래그 앤 드롭, 메뉴)</strong> 설계 및 구현.</li>
-                                </ul>
-                            </div>
-                            <div class="border-t pt-4 border-gray-100">
-                                <h4 class="font-bold text-lg text-gray-900 mb-2"><i class="fas fa-trophy mr-2 text-primary-indigo"></i> 결과 및 성과</h4>
-                                <ul class="list-disc ml-5 text-gray-600 space-y-1 text-sm">
-                                    <li>문서·이미지·PDF·동영상을 한 곳에서 관리 가능한 <strong>통합 워크스페이스</strong> 구현.</li>
-                                    <li>클라이언트 사이드 AI 기능 모듈화를 통한 외부 모델 확장 용이성 확보.</li>
-                                    <li>TypeScript 도입으로 런타임 오류 감소 및 코드 가독성 향상.</li>
-                                </ul>
-                            </div>
+                        <h3 class="text-5xl font-black text-gray-900 mb-4">Toolix</h3>
+                        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                            AI 기반 통합 워크스페이스 에디터로 문서, 이미지, PDF, 영상을 한 곳에서 관리하고 AI 분석 기능을 활용하세요.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="https://toolix.kro.kr/" target="_blank" class="inline-flex items-center bg-gray-900 text-white font-bold py-3 px-8 rounded-xl hover:bg-gray-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+                                <span>Live Demo</span>
+                                <i class="fas fa-arrow-right ml-3"></i>
+                            </a>
+                            <a href="https://github.com/Song307" target="_blank" class="inline-flex items-center bg-gray-100 text-gray-900 font-bold py-3 px-8 rounded-xl hover:bg-gray-200 transition-all duration-200">
+                                <i class="fab fa-github mr-2"></i>
+                                <span>GitHub</span>
+                            </a>
                         </div>
                     </div>
                     
-                    <!-- Retrospection -->
-                    <div class="card">
-                        <h3 class="sub-heading">회고 (배운 점/개선점)</h3>
-                        <div class="space-y-6">
-                            <div>
-                                <p class="text-gray-700 font-bold mb-2 text-lg">✅ 배운 점</p>
-                                <ul class="list-disc ml-5 text-gray-600 space-y-1 text-base">
-                                    <li>TipTap 확장 과정에서 에디터의 트랜스포트 구조 및 성능 최적화 패턴 이해.</li>
-                                    <li>IndexedDB 도입으로 <strong>브라우저 저장소 설계</strong> 중요성 체감.</li>
-                                </ul>
+                    <!-- Right: Visual/Stats -->
+                    <div class="bg-gradient-to-br from-gray-900 to-gray-700 p-12 flex items-center justify-center">
+                        <div class="grid grid-cols-2 gap-6 w-full max-w-sm">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+                                <i class="fas fa-brain text-4xl text-white mb-3"></i>
+                                <p class="text-white font-bold text-lg">AI 통합</p>
+                                <p class="text-gray-300 text-sm mt-1">분석 & 리서치</p>
                             </div>
-                            <div class="border-t pt-4 border-gray-100">
-                                <p class="text-gray-700 font-bold mb-2 text-lg">🚧 개선점</p>
-                                <ul class="list-disc ml-5 text-gray-600 space-y-1 text-base">
-                                    <li>테스트 커버리지(Jest + RTL) 보강 및 자동화 필요.</li>
-                                    <li>오프라인 동기화/백업 전략 추가 고려.</li>
-                                    <li>CI/CD 파이프라인 자동화 및 성능 모니터링 도입.</li>
-                                </ul>
+                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+                                <i class="fas fa-file-alt text-4xl text-white mb-3"></i>
+                                <p class="text-white font-bold text-lg">멀티미디어</p>
+                                <p class="text-gray-300 text-sm mt-1">통합 관리</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+                                <i class="fas fa-database text-4xl text-white mb-3"></i>
+                                <p class="text-white font-bold text-lg">로컬 우선</p>
+                                <p class="text-gray-300 text-sm mt-1">IndexedDB</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+                                <i class="fas fa-rocket text-4xl text-white mb-3"></i>
+                                <p class="text-white font-bold text-lg">React 19</p>
+                                <p class="text-gray-300 text-sm mt-1">TypeScript</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Tab-style Content Sections -->
+            <div class="space-y-6">
+                
+                <!-- Overview Section -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                    <div class="flex items-center mb-6 pb-4 border-b-2 border-gray-100">
+                        <div class="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-info-circle text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">프로젝트 개요</h3>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-3 flex items-center">
+                                <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                                해결하려는 문제
+                            </h4>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-minus text-gray-400 mr-3 mt-1.5 text-xs"></i>
+                                    <span>다양한 포맷(문서, 이미지, PDF, 영상)을 통합 편집하고 AI 분석 기능을 결합한 로컬 기반 워크스페이스의 부재</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-minus text-gray-400 mr-3 mt-1.5 text-xs"></i>
+                                    <span>민감한 문서를 위한 클라우드 의존도가 낮고 오프라인 친화적인 편집 환경 필요성</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-3 flex items-center">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                                핵심 아키텍처
+                            </h4>
+                            <div class="space-y-3">
+                                <div class="flex items-start">
+                                    <div class="w-6 h-6 bg-gray-100 rounded flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                                        <i class="fas fa-layer-group text-gray-600 text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-sm text-gray-900">SPA Architecture</p>
+                                        <p class="text-xs text-gray-600">React + TypeScript 기반 클라이언트 중심</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-6 h-6 bg-gray-100 rounded flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                                        <i class="fas fa-edit text-gray-600 text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-sm text-gray-900">Rich Text Editor</p>
+                                        <p class="text-xs text-gray-600">TipTap 확장 및 플러그인화</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-6 h-6 bg-gray-100 rounded flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                                        <i class="fas fa-database text-gray-600 text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-sm text-gray-900">Local Storage</p>
+                                        <p class="text-xs text-gray-600">IndexedDB 기반 데이터 영구 저장</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Features & Implementation -->
+                <div class="grid lg:grid-cols-2 gap-6">
+                    
+                    <!-- Feature 1 -->
+                    <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-gray-900 to-gray-700 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-brain text-white text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">AI 리서치 & 분석</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                            선택된 텍스트나 전체 문서에 대해 AI 기반 요약, 문법/스타일 피드백, 논리 구조 분석을 제공합니다.
+                        </p>
+                        <div class="bg-white rounded-lg p-4 border border-gray-200">
+                            <p class="text-xs font-semibold text-gray-900 mb-2">🔧 기술 구현</p>
+                            <p class="text-xs text-gray-700">클라이언트에서 AI API 호출, 결과를 UI로 렌더링 후 에디터에 삽입/주석 형태로 반영</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-500 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-folder-open text-white text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">통합 파일 관리</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                            문서, 이미지, PDF, 동영상을 하나의 워크스페이스에서 관리 및 미리보기/편집합니다.
+                        </p>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div class="bg-white rounded-lg p-3 border border-gray-200 text-center">
+                                <i class="fas fa-file-pdf text-red-500 text-lg mb-1"></i>
+                                <p class="text-xs font-semibold text-gray-900">PDF</p>
+                                <p class="text-xs text-gray-600">뷰어</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 border border-gray-200 text-center">
+                                <i class="fas fa-image text-blue-500 text-lg mb-1"></i>
+                                <p class="text-xs font-semibold text-gray-900">Image</p>
+                                <p class="text-xs text-gray-600">편집</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 border border-gray-200 text-center">
+                                <i class="fas fa-video text-purple-500 text-lg mb-1"></i>
+                                <p class="text-xs font-semibold text-gray-900">Video</p>
+                                <p class="text-xs text-gray-600">재생</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role & Results -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                    <div class="flex items-center mb-6 pb-4 border-b-2 border-gray-100">
+                        <div class="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-user-tie text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">나의 역할 및 성과</h3>
+                    </div>
+                    
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <!-- Role -->
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-4 flex items-center">
+                                <span class="w-2 h-2 bg-indigo-500 rounded-full mr-2"></span>
+                                담당 역할
+                            </h4>
+                            <div class="space-y-2">
+                                <div class="flex items-start bg-gray-50 rounded-lg p-3">
+                                    <i class="fas fa-check-circle text-indigo-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-700">프로젝트 아키텍처 설계 및 스택 선정</span>
+                                </div>
+                                <div class="flex items-start bg-gray-50 rounded-lg p-3">
+                                    <i class="fas fa-check-circle text-indigo-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-700">TipTap 기반 리치 에디터 통합 및 확장</span>
+                                </div>
+                                <div class="flex items-start bg-gray-50 rounded-lg p-3">
+                                    <i class="fas fa-check-circle text-indigo-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-700">IndexedDB 기반 로컬 저장소 설계</span>
+                                </div>
+                                <div class="flex items-start bg-gray-50 rounded-lg p-3">
+                                    <i class="fas fa-check-circle text-indigo-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-700">AI 연동 및 에디터-API 통신 레이어 구현</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Results -->
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-4 flex items-center">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                주요 성과
+                            </h4>
+                            <div class="space-y-2">
+                                <div class="flex items-start bg-green-50 rounded-lg p-3 border border-green-200">
+                                    <i class="fas fa-trophy text-green-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-700">통합 워크스페이스 구현으로 멀티미디어 파일 관리 효율화</span>
+                                </div>
+                                <div class="flex items-start bg-green-50 rounded-lg p-3 border border-green-200">
+                                    <i class="fas fa-trophy text-green-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-700">클라이언트 사이드 AI 기능 모듈화로 확장성 확보</span>
+                                </div>
+                                <div class="flex items-start bg-green-50 rounded-lg p-3 border border-green-200">
+                                    <i class="fas fa-trophy text-green-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-700">TypeScript 도입으로 런타임 오류 감소 및 코드 품질 향상</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Retrospection -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Learning -->
+                    <div class="bg-gradient-to-br from-amber-50 to-white rounded-2xl shadow-lg p-8 border-2 border-amber-200">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-lightbulb text-white"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">배운 점</h4>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 bg-amber-100 rounded flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-plus text-amber-600 text-xs"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">TipTap 확장 과정에서 에디터의 성능 최적화 패턴 이해</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 bg-amber-100 rounded flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-plus text-amber-600 text-xs"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">IndexedDB 도입으로 브라우저 저장소 설계 중요성 체감</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 bg-amber-100 rounded flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-plus text-amber-600 text-xs"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">AI 연동 시 데이터 흐름 최적화 경험</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Improvements -->
+                    <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-lg p-8 border-2 border-blue-200">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-arrow-trend-up text-white"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">개선 계획</h4>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 bg-blue-100 rounded flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-arrow-right text-blue-600 text-xs"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">테스트 커버리지 보강 및 자동화 도입</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 bg-blue-100 rounded flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-arrow-right text-blue-600 text-xs"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">오프라인 동기화/백업 전략 추가</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 bg-blue-100 rounded flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-arrow-right text-blue-600 text-xs"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">CI/CD 파이프라인 및 성능 모니터링 구축</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="bg-gradient-to-r from-gray-900 to-gray-700 rounded-2xl shadow-xl p-8 text-white">
+                    <h3 class="text-2xl font-bold mb-6 text-center">기술 스택</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-laptop-code text-2xl mr-3"></i>
+                                <h4 class="font-bold text-lg">Frontend</h4>
+                            </div>
+                            <ul class="space-y-2 text-sm text-gray-200">
+                                <li>• React 19 + TypeScript</li>
+                                <li>• TipTap Editor</li>
+                                <li>• Tailwind CSS</li>
+                                <li>• Radix UI</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-database text-2xl mr-3"></i>
+                                <h4 class="font-bold text-lg">Data</h4>
+                            </div>
+                            <ul class="space-y-2 text-sm text-gray-200">
+                                <li>• IndexedDB</li>
+                                <li>• Google AI API</li>
+                                <li>• React Query</li>
+                                <li>• REST API</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-tools text-2xl mr-3"></i>
+                                <h4 class="font-bold text-lg">Media</h4>
+                            </div>
+                            <ul class="space-y-2 text-sm text-gray-200">
+                                <li>• react-pdf</li>
+                                <li>• fabric.js</li>
+                                <li>• video.js</li>
+                                <li>• html2canvas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </section>
 
     </main>
 
-    <footer class="bg-white py-8 mt-12 border-t border-gray-200 shadow-inner">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
-            <p>&copy; 2024 Song Hah-sung Portfolio. All rights reserved.</p>
+    <footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12 mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-gray-100">Contact</h4>
+                    <div class="space-y-3 text-gray-300">
+                        <a href="mailto:ssongsyj0203@gmail.com" class="flex items-center hover:text-white transition-colors">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span class="text-sm">ssongsyj0203@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/Song307" target="_blank" class="flex items-center hover:text-white transition-colors">
+                            <i class="fab fa-github mr-2"></i>
+                            <span class="text-sm">github.com/Song307</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-gray-100">Quick Links</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <a href="#about" class="block hover:text-white transition-colors text-sm">About Me</a>
+                        <a href="#skills" class="block hover:text-white transition-colors text-sm">Skills</a>
+                        <a href="#project" class="block hover:text-white transition-colors text-sm">Projects</a>
+                    </div>
+                </div>
+                
+                <!-- Project Link -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-gray-100">Featured Project</h4>
+                    <a href="https://toolix.kro.kr/" target="_blank" class="inline-flex items-center bg-white text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-sm">
+                        <i class="fas fa-external-link-alt mr-2"></i>
+                        툴릭스 바로가기
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-6 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2024 Song Hah-sung. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
