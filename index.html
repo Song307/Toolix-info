@@ -212,12 +212,14 @@
         </div>
         
         <!-- Scroll Down Arrow -->
-        <a href="#about" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer">
-            <div class="flex flex-col items-center text-gray-600 hover:text-gray-900 transition-colors">
-                <span class="text-xs font-bold uppercase mb-2">Scroll Down</span>
-                <i class="fas fa-chevron-down text-2xl"></i>
-            </div>
-        </a>
+        <div class="absolute bottom-8 left-0 right-0 flex justify-center">
+            <a href="#about" class="animate-bounce cursor-pointer">
+                <div class="flex flex-col items-center text-gray-600 hover:text-gray-900 transition-colors">
+                    <span class="text-xs font-bold uppercase mb-2">Scroll Down</span>
+                    <i class="fas fa-chevron-down text-2xl"></i>
+                </div>
+            </a>
+        </div>
     </header>
 
     <!-- About Me Section -->
@@ -457,24 +459,27 @@
                     </div>
                 </div>
 
-                <!-- Coming Soon Card -->
-                <div class="bg-gray-100 border-4 border-gray-900 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden opacity-60 fade-in-up delay-200">
-                    <div class="bg-gray-300 p-6">
+                <!-- Project Card: NextLevel WithU -->
+                <div data-project="nextlevel" class="project-card bg-white border-4 border-gray-900 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all overflow-hidden group cursor-pointer fade-in-up delay-200">
+                    <div class="bg-gray-900 p-6">
                         <div class="flex items-center justify-between mb-4">
-                            <div class="inline-flex items-center px-3 py-1 bg-yellow-300 border-2 border-gray-900 text-xs font-black text-gray-900 uppercase tracking-tight">
-                                <i class="fas fa-clock text-gray-900 text-xs mr-2"></i>
-                                Soon
+                            <div class="inline-flex items-center px-3 py-1 bg-green-400 border-2 border-white text-xs font-black text-gray-900 uppercase tracking-tight">
+                                <i class="fas fa-circle text-gray-900 text-xs mr-2 animate-pulse"></i>
+                                Live
                             </div>
+                            <i class="fas fa-arrow-right text-white text-xl group-hover:translate-x-1 transition-transform"></i>
                         </div>
-                        <h3 class="text-4xl font-black text-gray-700 mb-2 uppercase tracking-tight">Project 2</h3>
-                        <p class="text-gray-600 text-sm font-bold">진행 예정 프로젝트</p>
+                        <h3 class="text-4xl font-black text-white mb-2 uppercase tracking-tight">WithU</h3>
+                        <p class="text-gray-300 text-sm font-bold">크라우드펀딩 플랫폼</p>
                     </div>
                     <div class="p-6">
-                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">
-                            새로운 프로젝트가 곧 공개됩니다.
+                        <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+                            번뜩이는 아이디어를 가진 누구나 제약 없이 꿈을 실현할 수 있도록 돕는 플랫폼
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-300 text-gray-600 text-xs font-bold border-2 border-gray-400 uppercase">TBD</span>
+                            <span class="px-3 py-1 bg-gray-900 text-white text-xs font-bold border-2 border-gray-900 uppercase">React</span>
+                            <span class="px-3 py-1 bg-gray-900 text-white text-xs font-bold border-2 border-gray-900 uppercase">Spring Boot</span>
+                            <span class="px-3 py-1 bg-gray-900 text-white text-xs font-bold border-2 border-gray-900 uppercase">AWS</span>
                         </div>
                     </div>
                 </div>
@@ -505,15 +510,15 @@
 
             <!-- Project Detail Panel (Hidden by default) -->
             <div id="project-detail-panel" class="mt-8 overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0; opacity: 0;">
-                <div class="bg-white border-4 border-gray-900 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 lg:p-12 relative">
-                    <!-- Close Button -->
-                    <button id="close-detail" class="absolute top-6 right-6 w-12 h-12 bg-gray-900 border-4 border-gray-900 flex items-center justify-center hover:bg-gray-700 transition-colors z-10">
-                        <i class="fas fa-times text-white text-xl"></i>
-                    </button>
-                    
                     <!-- Toolix Project Details -->
-                    <div id="toolix-detail" class="project-detail">
-                        <!-- Project Hero -->
+                    <div id="toolix-detail" class="project-detail" style="display: none;">
+                        <div class="bg-white border-4 border-gray-900 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 lg:p-12 relative">
+                            <!-- Close Button -->
+                            <button id="close-detail" class="absolute top-6 right-6 z-50 bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-6 border-4 border-gray-900 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all uppercase tracking-tight">
+                                <i class="fas fa-times mr-2"></i>닫기
+                            </button>
+                            
+                            <!-- Project Hero -->
                         <div class="bg-white overflow-hidden mb-12">
                             <div class="grid lg:grid-cols-2 gap-8">
                                 <!-- Left: Project Info -->
@@ -828,8 +833,398 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
-                </div>
+
+                    <!-- NextLevel WithU Project Details -->
+                    <div id="nextlevel-detail" class="project-detail" style="display: none;">
+                        <div class="bg-white border-4 border-gray-900 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 lg:p-12 relative">
+                            <!-- Close Button -->
+                            <button class="close-detail-btn absolute top-6 right-6 z-50 bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-6 border-4 border-gray-900 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all uppercase tracking-tight">
+                                <i class="fas fa-times mr-2"></i>닫기
+                            </button>
+                            
+                            <!-- Project Hero -->
+                            <div class="bg-white overflow-hidden mb-12">
+                                <div class="grid lg:grid-cols-2 gap-8">
+                                    <!-- Left: Project Info -->
+                                    <div class="flex flex-col justify-center">
+                                        <div class="inline-flex items-center px-4 py-2 bg-green-400 border-2 border-gray-900 text-sm font-black text-gray-900 mb-6 w-fit uppercase tracking-tight shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                                            <i class="fas fa-circle text-gray-900 text-xs mr-2 animate-pulse"></i>
+                                            Live
+                                        </div>
+                                        <h1 class="text-6xl font-black text-gray-900 mb-4 uppercase tracking-tighter">WithU</h1>
+                                        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                                            번뜩이는 아이디어를 가진 누구나 제약 없이 꿈을 실현할 수 있도록 돕는 크라우드펀딩 플랫폼
+                                        </p>
+                                    <div class="flex flex-col sm:flex-row gap-4">
+                                        <a href="https://nextlevel.r-e.kr" target="_blank" class="inline-flex items-center justify-center bg-gray-900 text-white font-black py-4 px-8 border-4 border-gray-900 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all uppercase tracking-tight">
+                                            <span>Live Demo</span>
+                                            <i class="fas fa-arrow-right ml-3"></i>
+                                        </a>
+                                        <a href="https://github.com/DMU-NextLevel" target="_blank" class="inline-flex items-center justify-center bg-white text-gray-900 font-black py-4 px-8 border-4 border-gray-900 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all uppercase tracking-tight">
+                                            <i class="fab fa-github mr-3"></i>
+                                            <span>GitHub</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Right: Image -->
+                                <div class="flex items-center justify-center">
+                                    <img src="./img/nextlevel-title.png" alt="WithU" class="border-4 border-gray-900 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-sm w-full">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 작품 개요 -->
+                        <div class="mb-12">
+                            <div class="bg-yellow-400 border-4 border-gray-900 p-2 mb-6 inline-block">
+                                <h2 class="text-3xl font-black text-gray-900 uppercase px-4">작품의 개요</h2>
+                            </div>
+                            <div class="bg-white border-4 border-gray-900 p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                                <div class="mb-6 pb-6 border-b-4 border-gray-900">
+                                    <h3 class="text-2xl font-black mb-4 uppercase">문제점</h3>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        현재의 펀딩 시장은 특정 분야에 집중되어 있거나, 기업 단위의 대규모 프로젝트가 중심을 이룹니다. <strong class="bg-yellow-300 px-1">자본과 인프라가 부족한 개인 창작자는 자신의 독창적인 아이디어를 실현하고 시장성을 검증할 기회조차 얻기 어렵습니다</strong>. 또한, 유료 광고 없이는 프로젝트 노출이 어려운 구조적 한계는 개인에게 또 다른 부담으로 작용합니다.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-black mb-4 uppercase">WithU의 제안</h3>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        WithU는 <strong class="bg-green-300 px-1">개인의 아이디어가 가진 무한한 가능성에 주목</strong>하여 복잡한 조건과 비용 부담을 최소화하고, <strong class="bg-blue-300 px-1">아이디어 하나만으로 프로젝트를 시작하고 잠재 고객과 만날 수 있는 새로운 생태계</strong>를 제안합니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 작품의 구성 및 동작 -->
+                        <div class="mb-12">
+                            <div class="bg-yellow-400 border-4 border-gray-900 p-2 mb-6 inline-block">
+                                <h2 class="text-3xl font-black text-gray-900 uppercase px-4">작품의 구성 및 동작</h2>
+                            </div>
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <!-- Feature 1 -->
+                                <div class="bg-white border-4 border-gray-900 p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all">
+                                    <div class="w-16 h-16 bg-gray-900 border-4 border-gray-900 flex items-center justify-center mb-4">
+                                        <i class="fas fa-rocket text-yellow-400 text-3xl"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-black text-gray-900 mb-3 uppercase">간편한 개설</h3>
+                                    <p class="text-gray-700 leading-relaxed mb-4">
+                                        복잡한 서류나 승인 과정 없이, 아이디어를 가진 개인이라면 누구나 간단한 템플릿에 따라 펀딩 프로젝트를 개설할 수 있습니다.
+                                    </p>
+                                    <div class="inline-flex items-center px-3 py-1 bg-yellow-300 border-2 border-gray-900 text-xs font-black uppercase">
+                                        <i class="fas fa-check-circle mr-2"></i>
+                                        No 승인 절차
+                                    </div>
+                                </div>
+                                
+                                <!-- Feature 2 -->
+                                <div class="bg-white border-4 border-gray-900 p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all">
+                                    <div class="w-16 h-16 bg-gray-900 border-4 border-gray-900 flex items-center justify-center mb-4">
+                                        <i class="fas fa-chart-line text-green-400 text-3xl"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-black text-gray-900 mb-3 uppercase">관리 대시보드</h3>
+                                    <p class="text-gray-700 leading-relaxed mb-4">
+                                        마이페이지에서 펀딩 진행률, 후원자 수, 모인 금액 등을 실시간으로 확인하고, 커뮤니티를 통해 후원자와 소통하며 신뢰를 구축합니다.
+                                    </p>
+                                    <div class="inline-flex items-center px-3 py-1 bg-green-300 border-2 border-gray-900 text-xs font-black uppercase">
+                                        <i class="fas fa-chart-pie mr-2"></i>
+                                        실시간 모니터링
+                                    </div>
+                                </div>
+                                
+                                <!-- Feature 3 -->
+                                <div class="bg-white border-4 border-gray-900 p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all">
+                                    <div class="w-16 h-16 bg-gray-900 border-4 border-gray-900 flex items-center justify-center mb-4">
+                                        <i class="fas fa-users text-blue-400 text-3xl"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-black text-gray-900 mb-3 uppercase">창작자 커뮤니티</h3>
+                                    <p class="text-gray-700 leading-relaxed mb-4">
+                                        펀딩과 별개로 개인 피드를 운영하여 아이디어, 작업 과정, 영감을 자유롭게 공유하고, 사용자들의 '좋아요'로 응원을 받을 수 있습니다.
+                                    </p>
+                                    <div class="inline-flex items-center px-3 py-1 bg-blue-300 border-2 border-gray-900 text-xs font-black uppercase">
+                                        <i class="fas fa-heart mr-2"></i>
+                                        커뮤니티 기반
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Demo Video -->
+                        <div class="mb-12">
+                            <div class="bg-yellow-400 border-4 border-gray-900 p-2 mb-6 inline-block">
+                                <h2 class="text-3xl font-black text-gray-900 uppercase px-4">시연 영상</h2>
+                            </div>
+                            <div class="border-4 border-gray-900 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+                                <div class="aspect-video bg-gray-900">
+                                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/0ai063UCDR4" title="WithU 시연 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 핵심기술 -->
+                        <div class="mb-12">
+                            <div class="bg-yellow-400 border-4 border-gray-900 p-2 mb-6 inline-block">
+                                <h2 class="text-3xl font-black text-gray-900 uppercase px-4">핵심기술 설명</h2>
+                            </div>
+                            <div class="space-y-6">
+                                <!-- Tech 1 -->
+                                <div class="bg-white border-4 border-gray-900 border-l-8 border-l-purple-500 p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                                    <div class="flex items-start gap-6">
+                                        <div class="w-20 h-20 bg-gray-900 border-4 border-gray-900 flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-shield-alt text-purple-400 text-3xl"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h3 class="text-3xl font-black text-gray-900 mb-4 uppercase">사용자 인증</h3>
+                                            <div class="bg-gray-100 border-2 border-gray-900 p-4 mb-4">
+                                                <h4 class="font-black text-lg mb-2 uppercase">OAuth2 + JWT 소셜 로그인</h4>
+                                                <p class="text-gray-700 leading-relaxed">
+                                                    Spring Security와 OAuth2를 활용한 구글, 카카오, 네이버 소셜 로그인을 지원하며, JWT를 통해 무상태(Stateless) 인증을 구현합니다.
+                                                </p>
+                                            </div>
+                                            <div class="flex flex-wrap gap-2">
+                                                <span class="px-3 py-1 bg-gray-900 text-white text-xs font-bold border-2 border-gray-900 uppercase">Spring Security</span>
+                                                <span class="px-3 py-1 bg-gray-900 text-white text-xs font-bold border-2 border-gray-900 uppercase">OAuth2</span>
+                                                <span class="px-3 py-1 bg-gray-900 text-white text-xs font-bold border-2 border-gray-900 uppercase">JWT</span>
+                                                <span class="px-3 py-1 bg-gray-900 text-white text-xs font-bold border-2 border-gray-900 uppercase">Spring Boot 3.x</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tech 2 -->
+                                <div class="bg-white border-4 border-gray-900 border-l-8 border-l-blue-500 p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                                    <div class="flex items-start gap-6">
+                                        <div class="w-20 h-20 bg-gray-900 border-4 border-gray-900 flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-tasks text-blue-400 text-3xl"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h3 class="text-3xl font-black text-gray-900 mb-4 uppercase">프로젝트 관리 시스템</h3>
+                                            <div class="bg-gray-100 border-2 border-gray-900 p-4 mb-4">
+                                                <h4 class="font-black text-lg mb-2 uppercase">QueryDSL + Spring Batch</h4>
+                                                <p class="text-gray-700 leading-relaxed">
+                                                    QueryDSL을 활용한 타입 안전한 동적 쿼리 구축으로 복잡한 검색 조건 처리, Spring Batch를 통한 프로젝트 상태 자동 관리 (펀딩 마감, 성공/실패 처리 자동화)
+                                                </p>
+                                            </div>
+                                            <div class="flex flex-wrap gap-2">
+                                                <span class="px-3 py-1 bg-gray-900 text-white text-xs font-bold border-2 border-gray-900 uppercase">QueryDSL</span>
+                                                <span class="px-3 py-1 bg-gray-900 text-white text-xs font-bold border-2 border-gray-900 uppercase">Spring Batch</span>
+                                                <span class="px-3 py-1 bg-gray-900 text-white text-xs font-bold border-2 border-gray-900 uppercase">JPA</span>
+                                                <span class="px-3 py-1 bg-gray-900 text-white text-xs font-bold border-2 border-gray-900 uppercase">MySQL</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tech 3 -->
+                                <div class="bg-white border-4 border-gray-900 border-l-8 border-l-green-500 p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                                    <div class="flex items-start gap-6">
+                                        <div class="w-20 h-20 bg-gray-900 border-4 border-gray-900 flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-credit-card text-green-400 text-3xl"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h3 class="text-3xl font-black text-gray-900 mb-4 uppercase">Toss 결제 시스템</h3>
+                                            <div class="bg-gray-100 border-2 border-gray-900 p-4 mb-4">
+                                                <h4 class="font-black text-lg mb-2 uppercase">Toss Payments API</h4>
+                                                <p class="text-gray-700 leading-relaxed">
+                                                    Toss Payments API를 통해 카드, 계좌이체, 간편결제 등 다양한 결제 수단을 지원하며, 후원 금액에 따른 리워드 자동 매칭 및 배송 관리 시스템 구현
+                                                </p>
+                                            </div>
+                                            <div class="flex flex-wrap gap-2">
+                                                <span class="px-3 py-1 bg-gray-900 text-white text-xs font-bold border-2 border-gray-900 uppercase">Toss Payments</span>
+                                                <span class="px-3 py-1 bg-gray-900 text-white text-xs font-bold border-2 border-gray-900 uppercase">REST API</span>
+                                                <span class="px-3 py-1 bg-gray-900 text-white text-xs font-bold border-2 border-gray-900 uppercase">Webhook</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 개발환경 -->
+                        <div class="mb-12">
+                            <div class="bg-yellow-400 border-4 border-gray-900 p-2 mb-6 inline-block">
+                                <h2 class="text-3xl font-black text-gray-900 uppercase px-4">프로젝트 개발환경</h2>
+                            </div>
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <!-- Frontend -->
+                                <div class="bg-gray-900 border-4 border-gray-900 p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-12 h-12 bg-yellow-400 border-2 border-white flex items-center justify-center mr-3">
+                                            <i class="fas fa-laptop-code text-gray-900 text-2xl"></i>
+                                        </div>
+                                        <h3 class="text-2xl font-black text-white uppercase">Frontend</h3>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="bg-white border-2 border-white p-2 text-center font-bold">React</div>
+                                        <div class="bg-white border-2 border-white p-2 text-center font-bold">TypeScript</div>
+                                        <div class="bg-white border-2 border-white p-2 text-center font-bold">Tailwind CSS</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Backend -->
+                                <div class="bg-gray-900 border-4 border-gray-900 p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-12 h-12 bg-green-400 border-2 border-white flex items-center justify-center mr-3">
+                                            <i class="fas fa-server text-gray-900 text-2xl"></i>
+                                        </div>
+                                        <h3 class="text-2xl font-black text-white uppercase">Backend</h3>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="bg-white border-2 border-white p-2 text-center font-bold">Spring Boot</div>
+                                        <div class="bg-white border-2 border-white p-2 text-center font-bold">JDK 21</div>
+                                        <div class="bg-white border-2 border-white p-2 text-center font-bold">QueryDSL</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Infrastructure -->
+                                <div class="bg-gray-900 border-4 border-gray-900 p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-12 h-12 bg-blue-400 border-2 border-white flex items-center justify-center mr-3">
+                                            <i class="fas fa-cloud text-gray-900 text-2xl"></i>
+                                        </div>
+                                        <h3 class="text-2xl font-black text-white uppercase">Infrastructure</h3>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="bg-white border-2 border-white p-2 text-center font-bold">AWS</div>
+                                        <div class="bg-white border-2 border-white p-2 text-center font-bold">Docker</div>
+                                        <div class="bg-white border-2 border-white p-2 text-center font-bold">MySQL</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 시스템 구조 -->
+                        <div class="mb-12">
+                            <div class="bg-yellow-400 border-4 border-gray-900 p-2 mb-6 inline-block">
+                                <h2 class="text-3xl font-black text-gray-900 uppercase px-4">시스템 구조</h2>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <h3 class="text-2xl font-black text-gray-900 mb-4 uppercase">Architecture</h3>
+                                    <div class="border-4 border-gray-900 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+                                        <img src="./img/nextlevel-architecture.png" alt="시스템 아키텍처" class="w-full h-auto">
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-black text-gray-900 mb-4 uppercase">ERD</h3>
+                                    <div class="border-4 border-gray-900 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+                                        <img src="./img/nextlevel-erd.png" alt="ERD" class="w-full h-auto">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team -->
+                        <div class="mb-12">
+                            <div class="bg-yellow-400 border-4 border-gray-900 p-2 mb-6 inline-block">
+                                <h2 class="text-3xl font-black text-gray-900 uppercase px-4">Team NextLevel</h2>
+                            </div>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                                <div class="bg-white border-4 border-gray-900 p-6 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                                    <div class="w-16 h-16 bg-yellow-400 border-4 border-gray-900 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                        <i class="fas fa-crown text-gray-900 text-2xl"></i>
+                                    </div>
+                                    <p class="font-black text-lg uppercase">임성환</p>
+                                    <p class="text-sm text-gray-600 font-bold">Frontend Leader</p>
+                                </div>
+                                <div class="bg-white border-4 border-gray-900 p-6 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                                    <div class="w-16 h-16 bg-blue-400 border-4 border-gray-900 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                        <i class="fas fa-code text-gray-900 text-2xl"></i>
+                                    </div>
+                                    <p class="font-black text-lg uppercase">김찬영</p>
+                                    <p class="text-sm text-gray-600 font-bold">Frontend Developer</p>
+                                </div>
+                                <div class="bg-yellow-300 border-4 border-gray-900 p-6 text-center shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                                    <div class="w-16 h-16 bg-gray-900 border-4 border-gray-900 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                        <i class="fas fa-laptop-code text-green-400 text-2xl"></i>
+                                    </div>
+                                    <p class="font-black text-lg uppercase">송하성</p>
+                                    <p class="text-sm font-bold">Frontend Developer</p>
+                                </div>
+                                <div class="bg-white border-4 border-gray-900 p-6 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                                    <div class="w-16 h-16 bg-red-400 border-4 border-gray-900 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                        <i class="fas fa-crown text-gray-900 text-2xl"></i>
+                                    </div>
+                                    <p class="font-black text-lg uppercase">이권희</p>
+                                    <p class="text-sm text-gray-600 font-bold">Backend Leader</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- My Role -->
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div class="bg-gray-900 border-4 border-gray-900 p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-12 h-12 bg-yellow-400 border-2 border-white flex items-center justify-center mr-3">
+                                        <i class="fas fa-user-tie text-gray-900 text-2xl"></i>
+                                    </div>
+                                    <h3 class="text-3xl font-black text-white uppercase">개발 역할</h3>
+                                </div>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start text-white">
+                                        <div class="w-6 h-6 bg-yellow-400 border-2 border-white flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                            <i class="fas fa-check text-gray-900 text-xs"></i>
+                                        </div>
+                                        <span>React + TypeScript 기반 프론트엔드 개발</span>
+                                    </li>
+                                    <li class="flex items-start text-white">
+                                        <div class="w-6 h-6 bg-yellow-400 border-2 border-white flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                            <i class="fas fa-check text-gray-900 text-xs"></i>
+                                        </div>
+                                        <span>프로젝트 페이지 UI/UX 구현</span>
+                                    </li>
+                                    <li class="flex items-start text-white">
+                                        <div class="w-6 h-6 bg-yellow-400 border-2 border-white flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                            <i class="fas fa-check text-gray-900 text-xs"></i>
+                                        </div>
+                                        <span>커뮤니티 피드 기능 개발</span>
+                                    </li>
+                                    <li class="flex items-start text-white">
+                                        <div class="w-6 h-6 bg-yellow-400 border-2 border-white flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                            <i class="fas fa-check text-gray-900 text-xs"></i>
+                                        </div>
+                                        <span>반응형 디자인 및 성능 최적화</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-900 border-4 border-gray-900 p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-12 h-12 bg-green-400 border-2 border-white flex items-center justify-center mr-3">
+                                        <i class="fas fa-trophy text-gray-900 text-2xl"></i>
+                                    </div>
+                                    <h3 class="text-3xl font-black text-white uppercase">주요 성과</h3>
+                                </div>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start text-white">
+                                        <div class="w-6 h-6 bg-green-400 border-2 border-white flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                            <i class="fas fa-star text-gray-900 text-xs"></i>
+                                        </div>
+                                        <span>2025 동양미래대학교 졸업작품</span>
+                                    </li>
+                                    <li class="flex items-start text-white">
+                                        <div class="w-6 h-6 bg-green-400 border-2 border-white flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                            <i class="fas fa-star text-gray-900 text-xs"></i>
+                                        </div>
+                                        <span>컴포넌트 재사용성 향상으로 개발 효율 증대</span>
+                                    </li>
+                                    <li class="flex items-start text-white">
+                                        <div class="w-6 h-6 bg-green-400 border-2 border-white flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                            <i class="fas fa-star text-gray-900 text-xs"></i>
+                                        </div>
+                                        <span>TypeScript 도입으로 코드 안정성 확보</span>
+                                    </li>
+                                    <li class="flex items-start text-white">
+                                        <div class="w-6 h-6 bg-green-400 border-2 border-white flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                            <i class="fas fa-star text-gray-900 text-xs"></i>
+                                        </div>
+                                        <span>Git Flow 전략을 통한 효율적인 팀 협업</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
             </div>
 
         </section>
@@ -904,18 +1299,81 @@
         // Project Detail Panel Animation
         const projectCards = document.querySelectorAll('.project-card');
         const detailPanel = document.getElementById('project-detail-panel');
-        const closeDetailBtn = document.getElementById('close-detail');
-        
         let isDetailOpen = false;
+        let currentOpenProject = null;
         
         // Open detail panel
         projectCards.forEach(card => {
             card.addEventListener('click', function() {
-                if (!isDetailOpen) {
+                const projectType = this.getAttribute('data-project');
+                
+                // If clicking the same project that's already open, close it
+                if (isDetailOpen && currentOpenProject === projectType) {
+                    closeDetailPanel();
+                    currentOpenProject = null;
+                    return;
+                }
+                
+                // If switching between projects, animate the transition
+                if (isDetailOpen && currentOpenProject !== projectType) {
+                    // Fade out current project
+                    const currentDetail = document.getElementById(`${currentOpenProject}-detail`);
+                    if (currentDetail) {
+                        currentDetail.style.opacity = '0';
+                        currentDetail.style.transition = 'opacity 0.3s ease-in-out';
+                        
+                        // After fade out, switch to new project
+                        setTimeout(() => {
+                            currentDetail.style.display = 'none';
+                            currentDetail.style.opacity = '1';
+                            
+                            // Show new project with fade in
+                            const selectedDetail = document.getElementById(`${projectType}-detail`);
+                            if (selectedDetail) {
+                                selectedDetail.style.display = 'block';
+                                selectedDetail.style.opacity = '0';
+                                selectedDetail.style.transition = 'opacity 0.3s ease-in-out';
+                                
+                                // Trigger fade in
+                                setTimeout(() => {
+                                    selectedDetail.style.opacity = '1';
+                                }, 10);
+                            }
+                            
+                            currentOpenProject = projectType;
+                            
+                            // Scroll to top of detail panel
+                            detailPanel.scrollIntoView({ 
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }, 300);
+                    }
+                } else {
+                    // Opening for the first time
+                    // Hide all detail divs first
+                    document.querySelectorAll('.project-detail').forEach(detail => {
+                        detail.style.display = 'none';
+                        detail.style.opacity = '1';
+                    });
+                    
+                    // Show the selected project detail with fade in
+                    const selectedDetail = document.getElementById(`${projectType}-detail`);
+                    if (selectedDetail) {
+                        selectedDetail.style.display = 'block';
+                        selectedDetail.style.opacity = '0';
+                        selectedDetail.style.transition = 'opacity 0.3s ease-in-out';
+                        
+                        setTimeout(() => {
+                            selectedDetail.style.opacity = '1';
+                        }, 10);
+                    }
+                    
                     // Expand panel with smooth animation
-                    detailPanel.style.maxHeight = '5000px';
+                    detailPanel.style.maxHeight = '10000px';
                     detailPanel.style.opacity = '1';
                     isDetailOpen = true;
+                    currentOpenProject = projectType;
                     
                     // Scroll to detail panel smoothly
                     setTimeout(() => {
@@ -929,11 +1387,15 @@
         });
         
         // Close detail panel
-        closeDetailBtn.addEventListener('click', function() {
+        const closeDetailBtn = document.getElementById('close-detail');
+        const closeDetailBtns = document.querySelectorAll('.close-detail-btn');
+        
+        function closeDetailPanel() {
             // Collapse panel
             detailPanel.style.maxHeight = '0';
             detailPanel.style.opacity = '0';
             isDetailOpen = false;
+            currentOpenProject = null;
             
             // Scroll back to projects section
             setTimeout(() => {
@@ -942,8 +1404,17 @@
                     block: 'start'
                 });
             }, 300);
+        }
+        
+        if (closeDetailBtn) {
+            closeDetailBtn.addEventListener('click', closeDetailPanel);
+        }
+        
+        closeDetailBtns.forEach(btn => {
+            btn.addEventListener('click', closeDetailPanel);
         });
         
+
         // Show/hide side navigation based on scroll position and highlight active section
         window.addEventListener('scroll', function() {
             const sideNav = document.getElementById('side-nav');

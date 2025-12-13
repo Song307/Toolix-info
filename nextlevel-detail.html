@@ -1,0 +1,614 @@
+<!-- Close Button -->
+<button id="close-detail" class="absolute top-6 right-6 z-50 bg-white hover:bg-gray-100 text-gray-800 font-bold py-3 px-6 rounded-full shadow-xl transition-all hover:scale-110">
+    <i class="fas fa-times mr-2"></i>닫기
+</button>
+
+<style>
+                            @keyframes float {
+                                0%, 100% { transform: translateY(0px); }
+                                50% { transform: translateY(-10px); }
+                            }
+                            @keyframes glow {
+                                0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.4); }
+                                50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.6); }
+                            }
+                            .glass-card {
+                                background: rgba(255, 255, 255, 0.1);
+                                backdrop-filter: blur(10px);
+                                border: 1px solid rgba(255, 255, 255, 0.2);
+                            }
+                            .gradient-border {
+                                position: relative;
+                                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                                padding: 2px;
+                                border-radius: 1rem;
+                            }
+                            .gradient-border-content {
+                                background: white;
+                                border-radius: calc(1rem - 2px);
+                            }
+                        </style>
+                        
+                        <!-- Project Hero with Modern Design -->
+                        <div class="relative mb-12 overflow-hidden rounded-3xl" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);">
+                            <div class="absolute inset-0 opacity-20">
+                                <div class="absolute top-0 left-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+                                <div class="absolute bottom-0 right-0 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style="animation-delay: 2s;"></div>
+                            </div>
+                            
+                            <div class="relative p-12 lg:p-16">
+                                <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+                                    <div class="flex-1 space-y-6">
+                                        <div class="inline-flex items-center px-4 py-2 glass-card rounded-full backdrop-blur-md">
+                                            <span class="relative flex h-3 w-3 mr-2">
+                                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                                <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                                            </span>
+                                            <span class="text-white text-sm font-bold">2025 동양미래대학교 졸업작품</span>
+                                        </div>
+                                        
+                                        <div>
+                                            <h1 class="text-6xl lg:text-7xl font-black text-white mb-4 tracking-tight">
+                                                <span class="inline-block" style="text-shadow: 0 10px 40px rgba(0,0,0,0.3);">WithU</span>
+                                            </h1>
+                                            <p class="text-2xl lg:text-3xl font-bold text-white/90 mb-3">번뜩이는 아이디어를 현실로</p>
+                                            <p class="text-lg text-white/80 leading-relaxed max-w-2xl">
+                                                누구나 제약 없이 꿈을 실현할 수 있도록 돕는<br class="hidden sm:block"/>
+                                                혁신적인 크라우드펀딩 플랫폼
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="flex flex-wrap gap-4 pt-4">
+                                            <a href="https://nextlevel.r-e.kr" target="_blank" 
+                                               class="group inline-flex items-center bg-white text-purple-600 font-black py-4 px-8 rounded-full shadow-2xl hover:shadow-xl hover:scale-105 transition-all duration-300">
+                                                <i class="fas fa-play-circle mr-2 group-hover:scale-110 transition-transform"></i>
+                                                Live Demo
+                                            </a>
+                                            <a href="https://github.com/DMU-NextLevel" target="_blank" 
+                                               class="group inline-flex items-center glass-card text-white font-bold py-4 px-8 rounded-full border border-white/30 hover:border-white/60 hover:scale-105 transition-all duration-300">
+                                                <i class="fab fa-github mr-2 group-hover:rotate-12 transition-transform"></i>
+                                                GitHub
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="relative lg:w-80">
+                                        <div class="absolute inset-0 bg-white/20 rounded-3xl blur-2xl"></div>
+                                        <img src="./img/nextlevel-title.png" alt="NextLevel WithU" 
+                                             class="relative rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
+                                             style="animation: float 6s ease-in-out infinite;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 1. 작품의 개요 -->
+                        <div class="mb-12">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                                    <i class="fas fa-book-open text-white text-2xl"></i>
+                                </div>
+                                <h2 class="text-4xl font-black text-gray-900">작품의 개요</h2>
+                            </div>
+                            <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800 via-slate-700 to-slate-800 p-10 shadow-2xl">
+                                <div class="absolute inset-0 opacity-10">
+                                    <div class="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+                                    <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+                                </div>
+                                <div class="relative">
+                                    <div class="prose prose-lg max-w-none">
+                                        <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 mb-6">
+                                            <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                                                <i class="fas fa-chart-line text-yellow-400 mr-3"></i>
+                                                현재 펀딩 시장의 문제
+                                            </h3>
+                                            <p class="text-white/90 leading-relaxed text-base">
+                                                현재의 펀딩 시장은 특정 분야에 집중되어 있거나, 기업 단위의 대규모 프로젝트가 중심을 이룹니다. 이로 인해 <strong class="text-yellow-300">자본과 인프라가 부족한 개인 창작자는 자신의 독창적인 아이디어를 실현하고 시장성을 검증할 기회조차 얻기 어렵습니다</strong>. 또한, 유료 광고 없이는 프로젝트 노출이 어려운 구조적 한계는 개인에게 또 다른 부담으로 작용합니다.
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 backdrop-blur-md rounded-xl p-6 border border-purple-300/30">
+                                            <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                                                <i class="fas fa-lightbulb text-yellow-400 mr-3"></i>
+                                                WithU의 제안
+                                            </h3>
+                                            <p class="text-white/90 leading-relaxed text-base">
+                                                <strong class="text-yellow-300">WithU는 개인의 아이디어가 가진 무한한 가능성에 주목</strong>하여 복잡한 조건과 비용 부담을 최소화하고, <strong class="text-green-300">아이디어 하나만으로 프로젝트를 시작하고 잠재 고객과 만날 수 있는 새로운 생태계</strong>를 제안합니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 2. 작품의 구성 및 동작 설명 -->
+                        <div class="mb-12">
+                            <div class="flex items-center mb-8">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                                    <i class="fas fa-cogs text-white text-2xl"></i>
+                                </div>
+                                <h2 class="text-4xl font-black text-gray-900">작품의 구성 및 동작</h2>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <!-- Feature 1 -->
+                                <div class="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-purple-200 hover:border-purple-400">
+                                    <div class="absolute top-0 right-0 w-32 h-32 bg-purple-100 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+                                    <div class="relative">
+                                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                            <i class="fas fa-rocket text-white text-3xl"></i>
+                                        </div>
+                                        <h3 class="text-2xl font-black text-gray-900 mb-4">간편한 프로젝트 개설</h3>
+                                        <p class="text-gray-700 leading-relaxed mb-4">
+                                            복잡한 서류나 승인 과정 없이, <strong class="text-purple-600">아이디어를 가진 개인이라면 누구나 간단한 템플릿</strong>에 따라 펀딩 프로젝트를 개설할 수 있습니다.
+                                        </p>
+                                        <div class="flex items-center text-sm text-purple-600 font-bold">
+                                            <i class="fas fa-check-circle mr-2"></i>
+                                            <span>No 복잡한 승인 절차</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Feature 2 -->
+                                <div class="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-blue-200 hover:border-blue-400">
+                                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+                                    <div class="relative">
+                                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                            <i class="fas fa-chart-line text-white text-3xl"></i>
+                                        </div>
+                                        <h3 class="text-2xl font-black text-gray-900 mb-4">프로젝트 관리 대시보드</h3>
+                                        <p class="text-gray-700 leading-relaxed mb-4">
+                                            마이페이지에서 <strong class="text-blue-600">펀딩 진행률, 후원자 수, 모인 금액</strong> 등을 실시간으로 확인하고, 커뮤니티를 통해 후원자와 소통하며 신뢰를 구축합니다.
+                                        </p>
+                                        <div class="flex items-center text-sm text-blue-600 font-bold">
+                                            <i class="fas fa-chart-pie mr-2"></i>
+                                            <span>실시간 현황 모니터링</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Feature 3 -->
+                                <div class="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-green-200 hover:border-green-400">
+                                    <div class="absolute top-0 right-0 w-32 h-32 bg-green-100 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+                                    <div class="relative">
+                                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                            <i class="fas fa-users text-white text-3xl"></i>
+                                        </div>
+                                        <h3 class="text-2xl font-black text-gray-900 mb-4">창작자 커뮤니티</h3>
+                                        <p class="text-gray-700 leading-relaxed mb-4">
+                                            펀딩과 별개로 <strong class="text-green-600">개인 피드를 운영</strong>하여 아이디어, 작업 과정, 영감을 자유롭게 공유하고, 사용자들의 '좋아요'로 응원을 받을 수 있습니다.
+                                        </p>
+                                        <div class="flex items-center text-sm text-green-600 font-bold">
+                                            <i class="fas fa-heart mr-2"></i>
+                                            <span>커뮤니티 기반 성장</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Demo Video with Stylish Container -->
+                        <div class="mb-12">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                                    <i class="fas fa-play-circle text-white text-2xl"></i>
+                                </div>
+                                <h2 class="text-4xl font-black text-gray-900">시연 영상</h2>
+                            </div>
+                            <div class="gradient-border">
+                                <div class="gradient-border-content overflow-hidden">
+                                    <div class="aspect-video bg-gray-900">
+                                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/0ai063UCDR4" title="WithU 시연 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 4. 핵심기술 설명 -->
+                        <div class="mb-12">
+                            <div class="flex items-center mb-8">
+                                <div class="w-12 h-12 bg-gradient-to-br from-red-600 to-orange-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                                    <i class="fas fa-microchip text-white text-2xl"></i>
+                                </div>
+                                <h2 class="text-4xl font-black text-gray-900">핵심기술 설명</h2>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <!-- Tech 1: 사용자 인증 -->
+                                <div class="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-l-8 border-purple-500">
+                                    <div class="p-8">
+                                        <div class="flex items-start gap-6">
+                                            <div class="flex-shrink-0">
+                                                <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                                                    <i class="fas fa-shield-alt text-white text-3xl"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h3 class="text-3xl font-black text-gray-900 mb-4">사용자 인증</h3>
+                                                <div class="space-y-4">
+                                                    <div class="bg-purple-50 rounded-xl p-5 border-l-4 border-purple-500">
+                                                        <h4 class="font-bold text-lg text-purple-900 mb-2">OAuth2 + JWT 기반 소셜 로그인</h4>
+                                                        <p class="text-gray-700 leading-relaxed">
+                                                            Spring Security와 OAuth2를 활용한 구글, 카카오, 네이버 소셜 로그인을 지원하며, JWT(JSON Web Token)를 통해 <strong class="text-purple-700">무상태(Stateless) 인증</strong>을 구현합니다.
+                                                        </p>
+                                                    </div>
+                                                    <div class="grid md:grid-cols-3 gap-4">
+                                                        <div class="bg-white border-2 border-purple-200 rounded-lg p-4 hover:border-purple-400 transition-colors">
+                                                            <div class="flex items-center justify-center mb-2">
+                                                                <i class="fab fa-google text-red-500 text-3xl"></i>
+                                                            </div>
+                                                            <p class="text-center text-sm font-bold text-gray-700">Google OAuth</p>
+                                                        </div>
+                                                        <div class="bg-white border-2 border-purple-200 rounded-lg p-4 hover:border-purple-400 transition-colors">
+                                                            <div class="flex items-center justify-center mb-2">
+                                                                <i class="fas fa-comment text-yellow-400 text-3xl"></i>
+                                                            </div>
+                                                            <p class="text-center text-sm font-bold text-gray-700">Kakao OAuth</p>
+                                                        </div>
+                                                        <div class="bg-white border-2 border-purple-200 rounded-lg p-4 hover:border-purple-400 transition-colors">
+                                                            <div class="flex items-center justify-center mb-2">
+                                                                <i class="fas fa-n text-green-500 text-3xl"></i>
+                                                            </div>
+                                                            <p class="text-center text-sm font-bold text-gray-700">Naver OAuth</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <span class="px-3 py-1.5 bg-purple-100 text-purple-800 rounded-full text-xs font-bold">Spring Security</span>
+                                                        <span class="px-3 py-1.5 bg-purple-100 text-purple-800 rounded-full text-xs font-bold">OAuth2</span>
+                                                        <span class="px-3 py-1.5 bg-purple-100 text-purple-800 rounded-full text-xs font-bold">JWT</span>
+                                                        <span class="px-3 py-1.5 bg-purple-100 text-purple-800 rounded-full text-xs font-bold">Spring Boot 3.x</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Tech 2: 프로젝트 관리 시스템 -->
+                                <div class="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-l-8 border-blue-500">
+                                    <div class="p-8">
+                                        <div class="flex items-start gap-6">
+                                            <div class="flex-shrink-0">
+                                                <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                                                    <i class="fas fa-tasks text-white text-3xl"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h3 class="text-3xl font-black text-gray-900 mb-4">크라우드펀딩 프로젝트 관리 시스템</h3>
+                                                <div class="space-y-4">
+                                                    <div class="bg-blue-50 rounded-xl p-5 border-l-4 border-blue-500">
+                                                        <h4 class="font-bold text-lg text-blue-900 mb-2">QueryDSL + Spring Batch</h4>
+                                                        <p class="text-gray-700 leading-relaxed">
+                                                            <strong class="text-blue-700">QueryDSL을 활용한 타입 안전한 동적 쿼리</strong> 구축으로 복잡한 검색 조건 처리, Spring Batch를 통한 <strong class="text-blue-700">프로젝트 상태 자동 관리</strong> (펀딩 마감, 성공/실패 처리 자동화)
+                                                        </p>
+                                                    </div>
+                                                    <div class="grid md:grid-cols-2 gap-4">
+                                                        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg p-4 border-2 border-blue-200">
+                                                            <div class="flex items-center mb-2">
+                                                                <i class="fas fa-search text-blue-600 text-xl mr-2"></i>
+                                                                <h5 class="font-bold text-gray-800">동적 쿼리</h5>
+                                                            </div>
+                                                            <p class="text-sm text-gray-600">복잡한 필터링 및 정렬 조건을 타입 안전하게 처리</p>
+                                                        </div>
+                                                        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg p-4 border-2 border-blue-200">
+                                                            <div class="flex items-center mb-2">
+                                                                <i class="fas fa-clock text-blue-600 text-xl mr-2"></i>
+                                                                <h5 class="font-bold text-gray-800">배치 처리</h5>
+                                                            </div>
+                                                            <p class="text-sm text-gray-600">프로젝트 상태 변경, 알림 발송 등 자동화</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <span class="px-3 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs font-bold">QueryDSL</span>
+                                                        <span class="px-3 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs font-bold">Spring Batch</span>
+                                                        <span class="px-3 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs font-bold">JPA</span>
+                                                        <span class="px-3 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs font-bold">MySQL</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Tech 3: Toss 결제 시스템 -->
+                                <div class="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-l-8 border-green-500">
+                                    <div class="p-8">
+                                        <div class="flex items-start gap-6">
+                                            <div class="flex-shrink-0">
+                                                <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                                                    <i class="fas fa-credit-card text-white text-3xl"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h3 class="text-3xl font-black text-gray-900 mb-4">Toss 연동 결제 및 리워드 관리</h3>
+                                                <div class="space-y-4">
+                                                    <div class="bg-green-50 rounded-xl p-5 border-l-4 border-green-500">
+                                                        <h4 class="font-bold text-lg text-green-900 mb-2">Toss Payments API 통합</h4>
+                                                        <p class="text-gray-700 leading-relaxed">
+                                                            Toss Payments API를 통해 <strong class="text-green-700">카드, 계좌이체, 간편결제 등 다양한 결제 수단</strong>을 지원하며, 후원 금액에 따른 <strong class="text-green-700">리워드 자동 매칭 및 배송 관리 시스템</strong> 구현
+                                                        </p>
+                                                    </div>
+                                                    <div class="grid grid-cols-3 gap-4">
+                                                        <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border-2 border-blue-200">
+                                                            <i class="fas fa-credit-card text-blue-600 text-3xl mb-2"></i>
+                                                            <p class="text-sm font-bold text-gray-800">카드 결제</p>
+                                                        </div>
+                                                        <div class="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-xl border-2 border-green-200">
+                                                            <i class="fas fa-mobile-alt text-green-600 text-3xl mb-2"></i>
+                                                            <p class="text-sm font-bold text-gray-800">간편결제</p>
+                                                        </div>
+                                                        <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl border-2 border-purple-200">
+                                                            <i class="fas fa-university text-purple-600 text-3xl mb-2"></i>
+                                                            <p class="text-sm font-bold text-gray-800">계좌이체</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bg-gradient-to-r from-green-100 to-emerald-100 rounded-lg p-4 border-2 border-green-300">
+                                                        <div class="flex items-center">
+                                                            <i class="fas fa-gift text-green-600 text-2xl mr-3"></i>
+                                                            <div>
+                                                                <h5 class="font-bold text-gray-800 mb-1">리워드 관리</h5>
+                                                                <p class="text-sm text-gray-700">후원 금액별 리워드 자동 매칭, 배송 상태 추적 및 알림</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <span class="px-3 py-1.5 bg-green-100 text-green-800 rounded-full text-xs font-bold">Toss Payments</span>
+                                                        <span class="px-3 py-1.5 bg-green-100 text-green-800 rounded-full text-xs font-bold">REST API</span>
+                                                        <span class="px-3 py-1.5 bg-green-100 text-green-800 rounded-full text-xs font-bold">Webhook</span>
+                                                        <span class="px-3 py-1.5 bg-green-100 text-green-800 rounded-full text-xs font-bold">Transaction</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 3. 프로젝트 개발환경 및 개발자 -->
+                        <div class="mb-12">
+                            <div class="flex items-center mb-8">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                                    <i class="fas fa-layer-group text-white text-2xl"></i>
+                                </div>
+                                <h2 class="text-4xl font-black text-gray-900">프로젝트 개발환경</h2>
+                            </div>
+                            <div class="grid md:grid-cols-3 gap-8">
+                                <!-- Frontend -->
+                                <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 p-8 hover:scale-105 transition-all duration-300 shadow-xl">
+                                    <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
+                                    <div class="relative">
+                                        <div class="flex items-center mb-6">
+                                            <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mr-3">
+                                                <i class="fas fa-laptop-code text-white text-2xl"></i>
+                                            </div>
+                                            <h3 class="text-2xl font-black text-white">Frontend</h3>
+                                        </div>
+                                        <div class="space-y-3">
+                                            <div class="bg-white/20 backdrop-blur-md p-3 rounded-xl border border-white/30 hover:bg-white/30 transition-colors">
+                                                <i class="fab fa-react text-white mr-2"></i>
+                                                <span class="text-white font-bold">React</span>
+                                            </div>
+                                            <div class="bg-white/20 backdrop-blur-md p-3 rounded-xl border border-white/30 hover:bg-white/30 transition-colors">
+                                                <i class="fas fa-code text-white mr-2"></i>
+                                                <span class="text-white font-bold">TypeScript</span>
+                                            </div>
+                                            <div class="bg-white/20 backdrop-blur-md p-3 rounded-xl border border-white/30 hover:bg-white/30 transition-colors">
+                                                <i class="fas fa-paint-brush text-white mr-2"></i>
+                                                <span class="text-white font-bold">Tailwind CSS</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Backend -->
+                                <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-500 to-green-600 p-8 hover:scale-105 transition-all duration-300 shadow-xl">
+                                    <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
+                                    <div class="relative">
+                                        <div class="flex items-center mb-6">
+                                            <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mr-3">
+                                                <i class="fas fa-server text-white text-2xl"></i>
+                                            </div>
+                                            <h3 class="text-2xl font-black text-white">Backend</h3>
+                                        </div>
+                                        <div class="space-y-3">
+                                            <div class="bg-white/20 backdrop-blur-md p-3 rounded-xl border border-white/30 hover:bg-white/30 transition-colors">
+                                                <i class="fas fa-leaf text-white mr-2"></i>
+                                                <span class="text-white font-bold">Spring Boot</span>
+                                            </div>
+                                            <div class="bg-white/20 backdrop-blur-md p-3 rounded-xl border border-white/30 hover:bg-white/30 transition-colors">
+                                                <i class="fab fa-java text-white mr-2"></i>
+                                                <span class="text-white font-bold">JDK 21</span>
+                                            </div>
+                                            <div class="bg-white/20 backdrop-blur-md p-3 rounded-xl border border-white/30 hover:bg-white/30 transition-colors">
+                                                <i class="fas fa-database text-white mr-2"></i>
+                                                <span class="text-white font-bold">QueryDSL</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Infrastructure -->
+                                <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 p-8 hover:scale-105 transition-all duration-300 shadow-xl">
+                                    <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
+                                    <div class="relative">
+                                        <div class="flex items-center mb-6">
+                                            <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mr-3">
+                                                <i class="fas fa-cloud text-white text-2xl"></i>
+                                            </div>
+                                            <h3 class="text-2xl font-black text-white">Infrastructure</h3>
+                                        </div>
+                                        <div class="space-y-3">
+                                            <div class="bg-white/20 backdrop-blur-md p-3 rounded-xl border border-white/30 hover:bg-white/30 transition-colors">
+                                                <i class="fab fa-aws text-white mr-2"></i>
+                                                <span class="text-white font-bold">AWS</span>
+                                            </div>
+                                            <div class="bg-white/20 backdrop-blur-md p-3 rounded-xl border border-white/30 hover:bg-white/30 transition-colors">
+                                                <i class="fab fa-docker text-white mr-2"></i>
+                                                <span class="text-white font-bold">Docker</span>
+                                            </div>
+                                            <div class="bg-white/20 backdrop-blur-md p-3 rounded-xl border border-white/30 hover:bg-white/30 transition-colors">
+                                                <i class="fas fa-database text-white mr-2"></i>
+                                                <span class="text-white font-bold">MySQL</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- System Architecture & ERD with Modern Design -->
+                        <div class="mb-12">
+                            <div class="flex items-center mb-8">
+                                <div class="w-12 h-12 bg-gradient-to-br from-pink-600 to-rose-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                                    <i class="fas fa-diagram-project text-white text-2xl"></i>
+                                </div>
+                                <h2 class="text-4xl font-black text-gray-900">시스템 구조</h2>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="group">
+                                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                                        <span class="w-3 h-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full mr-3"></span>
+                                        시스템 아키텍처
+                                    </h3>
+                                    <div class="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-gray-200 group-hover:border-purple-400 transition-all duration-300">
+                                        <img src="./img/nextlevel-architecture.png" alt="시스템 아키텍처" class="w-full h-auto group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                                        <span class="w-3 h-3 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-full mr-3"></span>
+                                        ERD
+                                    </h3>
+                                    <div class="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-gray-200 group-hover:border-indigo-400 transition-all duration-300">
+                                        <img src="./img/nextlevel-erd.png" alt="ERD" class="w-full h-auto group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Team with Modern Design -->
+                        <div class="mb-12">
+                            <div class="flex items-center mb-8">
+                                <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                                    <i class="fas fa-users text-white text-2xl"></i>
+                                </div>
+                                <h2 class="text-4xl font-black text-gray-900">Team NextLevel</h2>
+                            </div>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                                <div class="group bg-white border-2 border-gray-200 p-6 text-center rounded-2xl hover:border-yellow-400 hover:shadow-xl transition-all duration-300">
+                                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-crown text-white text-3xl"></i>
+                                    </div>
+                                    <p class="font-black text-lg text-gray-900">임성환</p>
+                                    <p class="text-sm text-gray-600 font-medium">Frontend Leader</p>
+                                </div>
+                                <div class="group bg-white border-2 border-gray-200 p-6 text-center rounded-2xl hover:border-blue-400 hover:shadow-xl transition-all duration-300">
+                                    <div class="w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-code text-white text-3xl"></i>
+                                    </div>
+                                    <p class="font-black text-lg text-gray-900">김찬영</p>
+                                    <p class="text-sm text-gray-600 font-medium">Frontend Developer</p>
+                                </div>
+                                <div class="relative bg-gradient-to-br from-yellow-300 via-yellow-400 to-orange-400 border-4 border-gray-900 p-6 text-center rounded-2xl shadow-2xl overflow-hidden" style="animation: glow 2s ease-in-out infinite;">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                                    <div class="relative w-20 h-20 bg-gray-900 rounded-full mx-auto mb-4 flex items-center justify-center shadow-2xl ring-4 ring-white">
+                                        <i class="fas fa-laptop-code text-green-400 text-3xl"></i>
+                                    </div>
+                                    <p class="relative font-black text-lg text-gray-900">송하성</p>
+                                    <p class="relative text-sm font-bold text-gray-800">Frontend Developer</p>
+                                    <div class="absolute top-2 right-2">
+                                        <span class="relative flex h-3 w-3">
+                                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-900 opacity-75"></span>
+                                            <span class="relative inline-flex rounded-full h-3 w-3 bg-gray-900"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="group bg-white border-2 border-gray-200 p-6 text-center rounded-2xl hover:border-red-400 hover:shadow-xl transition-all duration-300">
+                                    <div class="w-20 h-20 bg-gradient-to-br from-red-400 to-red-600 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-crown text-white text-3xl"></i>
+                                    </div>
+                                    <p class="font-black text-lg text-gray-900">이권희</p>
+                                    <p class="text-sm text-gray-600 font-medium">Backend Leader</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- My Role with Modern Design -->
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+                                <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
+                                <div class="relative">
+                                    <div class="flex items-center mb-6">
+                                        <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mr-3">
+                                            <i class="fas fa-user-tie text-white text-2xl"></i>
+                                        </div>
+                                        <h3 class="text-3xl font-black text-white">개발 역할</h3>
+                                    </div>
+                                    <ul class="space-y-4">
+                                        <li class="flex items-start text-white/95">
+                                            <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                                <i class="fas fa-check text-xs"></i>
+                                            </div>
+                                            <span class="leading-relaxed">React + TypeScript 기반 프론트엔드 개발</span>
+                                        </li>
+                                        <li class="flex items-start text-white/95">
+                                            <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                                <i class="fas fa-check text-xs"></i>
+                                            </div>
+                                            <span class="leading-relaxed">프로젝트 페이지 UI/UX 구현</span>
+                                        </li>
+                                        <li class="flex items-start text-white/95">
+                                            <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                                <i class="fas fa-check text-xs"></i>
+                                            </div>
+                                            <span class="leading-relaxed">커뮤니티 피드 기능 개발</span>
+                                        </li>
+                                        <li class="flex items-start text-white/95">
+                                            <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                                <i class="fas fa-check text-xs"></i>
+                                            </div>
+                                            <span class="leading-relaxed">반응형 디자인 및 성능 최적화</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+                                <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
+                                <div class="relative">
+                                    <div class="flex items-center mb-6">
+                                        <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mr-3">
+                                            <i class="fas fa-trophy text-white text-2xl"></i>
+                                        </div>
+                                        <h3 class="text-3xl font-black text-white">주요 성과</h3>
+                                    </div>
+                                    <ul class="space-y-4">
+                                        <li class="flex items-start text-white/95">
+                                            <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                                <i class="fas fa-star text-xs"></i>
+                                            </div>
+                                            <span class="leading-relaxed">2025 동양미래대학교 졸업작품 우수상 수상</span>
+                                        </li>
+                                        <li class="flex items-start text-white/95">
+                                            <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                                <i class="fas fa-star text-xs"></i>
+                                            </div>
+                                            <span class="leading-relaxed">컴포넌트 재사용성 향상으로 개발 효율 증대</span>
+                                        </li>
+                                        <li class="flex items-start text-white/95">
+                                            <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                                <i class="fas fa-star text-xs"></i>
+                                            </div>
+                                            <span class="leading-relaxed">TypeScript 도입으로 코드 안정성 확보</span>
+                                        </li>
+                                        <li class="flex items-start text-white/95">
+                                            <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                                <i class="fas fa-star text-xs"></i>
+                                            </div>
+                                            <span class="leading-relaxed">Git Flow 전략을 통한 효율적인 팀 협업</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
